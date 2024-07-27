@@ -5,7 +5,7 @@ import time
 class Database:
 
     def check_posts_not_posted(self):
-        sqlite_connection = sqlite3.connect('sql.db')
+        sqlite_connection = sqlite3.connect('/home/vinh/Desktop/wow_discord_bot/sql.db')
         cursor = sqlite_connection.cursor()
         try:
             cursor.execute("SELECT posted FROM Post WHERE posted = 0 ORDER BY datetime DESC")
@@ -22,7 +22,7 @@ class Database:
                 sqlite_connection.close()
 
     def add_posts(self, titles, dates, links):
-        sqlite_connection = sqlite3.connect('sql.db')
+        sqlite_connection = sqlite3.connect('/home/vinh/Desktop/wow_discord_bot/sql.db')
         cursor = sqlite_connection.cursor()
         try:
             data = []
@@ -46,7 +46,7 @@ class Database:
                 sqlite_connection.close()
 
     def add_items(self, post_link, item_names, item_links):
-        sqlite_connection = sqlite3.connect('sql.db')
+        sqlite_connection = sqlite3.connect('/home/vinh/Desktop/wow_discord_bot/sql.db')
         cursor = sqlite_connection.cursor()
         try:
             data = []
@@ -72,7 +72,7 @@ class Database:
                 sqlite_connection.close()
 
     def get_latest_post(self):
-        sqlite_connection = sqlite3.connect('sql.db')
+        sqlite_connection = sqlite3.connect('/home/vinh/Desktop/wow_discord_bot/sql.db')
         cursor = sqlite_connection.cursor()
         try:
             # check if there exists a row with the link
@@ -96,7 +96,7 @@ class Database:
                 sqlite_connection.close()
 
     def get_5_latest_post(self):
-        sqlite_connection = sqlite3.connect('sql.db')
+        sqlite_connection = sqlite3.connect('/home/vinh/Desktop/wow_discord_bot/sql.db')
         cursor = sqlite_connection.cursor()
         try:
             # check if there exists a row with the link
@@ -124,7 +124,7 @@ class Database:
                 sqlite_connection.close()
 
     def get_posts_not_sent(self):
-        sqlite_connection = sqlite3.connect('sql.db')
+        sqlite_connection = sqlite3.connect('/home/vinh/Desktop/wow_discord_bot/sql.db')
         cursor = sqlite_connection.cursor()
         try:
             # check if there exists a row with the link

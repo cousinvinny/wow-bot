@@ -11,7 +11,7 @@ db = Database()
 
 bot = commands.Bot(command_prefix="!", intents=discord.Intents.all())
 
-with open("token.txt") as file:
+with open("/home/vinh/Desktop/wow_discord_bot/token.txt") as file:
     token = file.read()
 
 
@@ -46,6 +46,7 @@ async def on_ready():
         await send_posts_not_sent(bot)
     else:
         print("latest post has already been automatically posted")
+    await bot.close()
     sys.exit()
 
 
